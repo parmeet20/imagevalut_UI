@@ -54,11 +54,17 @@ const App: React.FC = () => {
       <div className="bg-white/20 backdrop-blur-md p-4 rounded-2xl fixed top-4 left-1/2 transform -translate-x-1/2 w-full max-w-7xl shadow-lg z-50">
         <div className="flex justify-between items-center">
           <div className="flex">
-            <img src="https://tse3.mm.bing.net/th?id=OIG2.B7S17.Lpw.Eux6SHsqc2&pid=ImgGn" alt="NA" height={2} className="mr-2 rounded-full" width={40} />
+            <img
+              src="https://tse3.mm.bing.net/th?id=OIG2.B7S17.Lpw.Eux6SHsqc2&pid=ImgGn"
+              alt="NA"
+              height={2}
+              className="mr-2 rounded-full"
+              width={40}
+            />
             <h1 className="text-slate-700 text-3xl font-bold">ImageVault</h1>
           </div>
           <div className="space-x-4 flex items-center">
-            <UploadFile contract={contract!} account={address!} />
+            {address && <UploadFile contract={contract!} account={address!} />}{" "}
             <Button>
               {address ? (
                 <span className="text-sm font-semibold">
